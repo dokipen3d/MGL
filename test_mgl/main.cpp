@@ -527,11 +527,12 @@ void bufferSubData(GLenum target, GLuint buffer, GLsizei size, const void *ptr)
 
 int test_clear(GLFWwindow* window, int width, int height)
 {
-    glClearColor(0.5, 0.2, 0.2, 0.0);
-    glClear(GL_COLOR_BUFFER_BIT);
+    while(!glfwWindowShouldClose(window)){
+        glClearColor(0.5, 0.2, 0.2, 0.0);
+        glClear(GL_COLOR_BUFFER_BIT);
 
-    SWAP_BUFFERS;
-
+        SWAP_BUFFERS;
+    }
     return 0;
 }
 
@@ -2889,7 +2890,7 @@ int main_glfw(int argc, const char * argv[])
 
     fprintf(stderr, "setup complete. testing...\n");
 
-    // test_clear(window, width, height);
+    //test_clear(window, width, height);
     // test_draw_arrays(window, width, height);
     // test_draw_elements(window, width, height);
     // test_draw_range_elements(window, width, height);
@@ -2897,7 +2898,7 @@ int main_glfw(int argc, const char * argv[])
     // test_uniform_buffer(window, width, height);
     // test_1D_textures(window, width, height);
     // test_1D_array_textures(window, width, height);
-    // test_2D_textures(window, width, height);
+     test_2D_textures(window, width, height);
     // test_3D_textures(window, width, height);
     // test_2D_array_textures(window, width, height);
     // test_textures(window, width, height, 0, 0);
@@ -2907,7 +2908,7 @@ int main_glfw(int argc, const char * argv[])
     // test_textures(window, width, height, 1, 1, 8, GL_LINEAR_MIPMAP_NEAREST);
     // test_framebuffer(window, width, height);
     // test_readpixels(window, width, height);
-    test_compute_shader(window, width, height);
+    // test_compute_shader(window, width, height);
 
     //test_2D_array_textures_perf_mon(window, width, height);
 

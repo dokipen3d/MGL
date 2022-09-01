@@ -98,3 +98,6 @@ target_link_libraries(${PROJECT_NAME}
                         )
 
 add_subdirectory(test_mgl)
+add_subdirectory(test_mgl_app)
+
+#add_subdirectory(test_tut)
